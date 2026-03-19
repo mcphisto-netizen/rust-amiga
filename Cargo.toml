@@ -1,0 +1,38 @@
+[package]
+name = "rust-amiga"
+version = "0.1.0"
+edition = "2021"
+description = "Write modern Rust code for the Commodora Amiga 500 (m68k)"
+license = "MIT"
+repository = "https://github.com/yourname/rust-amiga"
+keywords = ["amiga", "m68k", "retro", "embedded", "no_std"]
+categories = ["embedded", "no-std", "os::amiga-apis"]
+
+[lib]
+crate-type = ["staticlib", "cdylib"]
+path = "src/lib.rs"
+
+[profile.dev]
+opt-level = 0
+debug = true
+panic = "abort"
+
+[profile.release]
+opt-level = "z"
+debug = false
+panic = "abort"
+lto = true
+codegen-units = 1
+
+[build-dependencies]
+cc = "1.0"
+
+[target.'cfg(target_arch = "m68k")'.dependencies]
+
+[features]
+default = ["graphics", "intuition", "audio", "dos"]
+graphics = []
+intuition = []
+audio = []
+dos = []
+exceptions = []

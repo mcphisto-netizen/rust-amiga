@@ -1,0 +1,25 @@
+{
+  "arch": "m68k",
+  "cpu": "68000",
+  "data-layout": "E-p:32:32-i8:8:32-i16:16:32-i32:32:32-f32:32:32-f64:64:32-n32",
+  "dynamic-linking": false,
+  "executables": true,
+  "linker": "vlink",
+  "linker-flavor": "gnu-lld",
+  "llvm-target": "m68k-unknown-amigaos",
+  "max-atomic-width": 32,
+  "os": "amigaos",
+  "panic-strategy": "abort",
+  "relocation-model": "static",
+  "target-c-int-width": "32",
+  "target-endian": "big",
+  "target-pointer-width": "32",
+  "vendor": "commodore",
+  "pre-link-args": {
+    "gnu-lld": ["-b", "amigahunk", "-c"]
+  },
+  "crt-objects-fallback": "false",
+  "crt-static-respected": true,
+  "has-rpath": false,
+  "no-default-libraries": true
+}
